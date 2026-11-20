@@ -26,7 +26,7 @@
  "caladesi": {
   "file": "img/caladesi.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:Caladesi_trail_oak.jpg",
-  "artist": "No machine-readable author provided. Philipp Michel Reichold assumed (based on c",
+  "artist": "Wikimedia Commons",
   "license": "CC BY-SA 2.5"
  },
  "honeymoon": {
@@ -136,5 +136,17 @@
   "page": "https://commons.wikimedia.org/wiki/File:Lowry_Park_Zoo_Sign_in_Tampa.jpg",
   "artist": "TampAGS, for AGS Media",
   "license": "CC BY-SA 3.0"
+ },
+ "weeki": {
+  "file": "img/weeki.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Weeki_Wachee_Springs_State_Park_001.jpg",
+  "artist": "Leonard J. DeFrancisci",
+  "license": "CC BY-SA 3.0"
+ },
+ "bok": {
+  "file": "img/bok.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bok_Tower_at_Work.jpg",
+  "artist": "Milesb1217",
+  "license": "CC BY-SA 4.0"
  }
 }
