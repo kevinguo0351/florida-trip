@@ -4,13 +4,14 @@ const emoji = {food:'🍽️', sight:'📷', park:'🌴', shop:'🛍️', hotel:
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const shortDate = date => date.slice(5).replace('-', '/');
 let trip, credits, routes, map, extraLayer, selected = 'all';
+const palette = ['#e4572e','#f2a900','#0aa1dd','#c2185b','#2e9e44','#6a4c93','#8d5524','#37474f'];
 const dayLayers = new Map();
 const markers = new Map();
 const motion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function creditFor(stop) { return credits[stop.img_key || stop.id]; }
 function media(stop, className = 'thumb') {
   const credit = creditFor(stop);
-  return credit ? `<img class="media ${className}" src="${escapeHTML(credit.file)}" alt="${escapeHTML(stop.name)}" loading="lazy" data-category="${escapeHTML(stop.cat)}">` : `<span class="${className} placeholder" aria-hidden="true">${emoji[stop.cat] || '📍'}</span>`;
+  return credit ? `<img class="media ${className}" src="${escapeHTML(credit.file)}" alt="${escapeHTML(stop.name)}" loading="lazy" data-category="${escapeHTML(stop.cat)}" data-name="${escapeHTML(stop.name)}">` : `<span class="${className} placeholder"><span>${emoji[stop.cat] || '📍'}</span><span class="placeholder-name">${escapeHTML(stop.name)}</span></span>`;
 }
 function creditLine(c) { return `<a href="${escapeHTML(c.page)}" target="_blank" rel="noopener noreferrer">${escapeHTML(c.artist)} · ${escapeHTML(c.license)}</a>`; }
 function navLink(stop) { return `<a class="navigation-link" href="https://www.google.com/maps/dir/?api=1&destination=${stop.lat},${stop.lon}" target="_blank" rel="noopener noreferrer">Google 地图导航 ↗</a>`; }
@@ -19,14 +20,16 @@ function driving(date) { const f = routes.features.filter(r => r.properties.date
 function duration(min) { return `${Math.floor(min/60) ? `${Math.floor(min/60)} 小时 ` : ''}${min%60 ? `${min%60} 分钟` : ''}`.trim() || '0 分钟'; }
 function render() {
   document.title = trip.title;
-  $('title').textContent = trip.title;
-  $('subtitle').textContent = trip.subtitle;
+  $('title').innerHTML = escapeHTML(trip.title).replace(/11\/23–11\/30/, '<span class="nowrap">11/23–11/30</span>');
+  $('subtitle').innerHTML = trip.subtitle.split(' → ').map((city,i)=>`<span class="route-segment">${i ? ' → ' : ''}${escapeHTML(city)}</span>`).join(' ');
   $('dates').textContent = `${trip.days[0].date.replaceAll('-','/')} — ${trip.days.at(-1).date.replaceAll('-','/')}`;
   $('people').innerHTML = trip.people.map(([name,note])=>`<div class="person"><strong>${escapeHTML(name)}</strong>${escapeHTML(note)}</div>`).join('');
   const count = trip.days.reduce((sum,d)=>sum+d.stops.length,0);
   const km = routes.features.reduce((sum,f)=>sum+f.properties.km,0);
   $('stats').innerHTML = [[trip.days.length,'天的旅行'],[km.toLocaleString('zh-CN'),'公里路线'],[count,'个行程站点']].map(([n,l])=>`<div class="stat"><strong>${n}</strong><span>${l}</span></div>`).join('');
   $('day-count').textContent = `${trip.days.length} 天 · ${count} 站`;
+  $('legend-items').innerHTML = trip.days.map(d=>`<span><i style="background:${d.color}"></i>${shortDate(d.date)} ${escapeHTML(d.dow)}</span>`).join('');
+  $('map-legend').open = !window.matchMedia('(max-width:760px)').matches;
   $('day-selector').innerHTML = `<button class="day-pill" type="button" data-day="all" aria-pressed="true">全部</button>` + trip.days.map(d=>`<button class="day-pill" type="button" style="--day-color:${d.color}" data-day="${d.date}" aria-pressed="false">${shortDate(d.date)} ${escapeHTML(d.dow)}</button>`).join('');
   $('days').innerHTML = trip.days.map((d)=>{
     const drive = driving(d.date);
@@ -59,26 +62,36 @@ function selectDay(date, scroll = true, fit = true) {
   dayLayers.forEach((layers,key)=>{
     const active = date==='all' || date===key;
     layers.route.setStyle({opacity:active ? .85 : .12,weight:active ? 5 : 3});
-    layers.stops.forEach(marker=>marker.setOpacity(active ? 1 : .25));
+    layers.stops.forEach((marker,i)=>{ marker.setOpacity(active ? 1 : .25); marker.setIcon(stopIcon(layers.color,i,date===key)); marker.setZIndexOffset(date===key ? 500 : 0); });
     if(active) { if(layers.route.getBounds().isValid()) bounds.push(layers.route.getBounds()); layers.stops.forEach(m=>bounds.push(m.getLatLng())); if(date!=='all') layers.route.bringToFront(); }
   });
   if(map && fit && bounds.length) map.fitBounds(L.latLngBounds(bounds),{padding:[30,30],maxZoom:12,animate:motion});
   if(scroll && date!=='all') $(`day-${date}`).scrollIntoView({behavior:motion?'smooth':'auto',block:'start'});
 }
+function stopIcon(color,index,numbered) {
+  const size = numbered ? 28 : 12;
+  return L.divIcon({className:'number-marker',html:`<span class="${numbered ? 'marker-circle' : 'marker-dot'}" style="--marker-color:${color}">${numbered ? index+1 : ''}</span>`,iconSize:[size,size],iconAnchor:[size/2,size/2]});
+}
 function initMap() {
   if(!window.L) { $('map-status').textContent = '地图组件未能载入，请检查网络后刷新。行程与导航仍可使用。'; $('map').innerHTML='<p style="padding:24px">地图暂不可用 · 请查看下方行程</p>'; return; }
-  map = L.map('map',{scrollWheelZoom:false,zoomControl:false});
+  map = L.map('map',{scrollWheelZoom:false,zoomControl:false,dragging:!L.Browser.mobile});
+  if(L.Browser.mobile) $('map-lock').classList.add('available');
   L.control.zoom({position:'bottomright',zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(map);
   const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'}).addTo(map);
   tiles.on('tileerror',()=>{ $('map-status').textContent='部分底图未能载入；路线与站点仍可查看。'; });
+  const shared = new Map();
+  trip.days.forEach(d=>d.stops.forEach(s=>{ const key=`${s.lat},${s.lon}`; if(!shared.has(key))shared.set(key,[]); shared.get(key).push(s); }));
   trip.days.forEach(d=>{
-    const route = L.geoJSON({type:'FeatureCollection',features:routes.features.filter(f=>f.properties.date===d.date)},{style:f=>({color:f.properties.color,weight:5,opacity:.85})}).addTo(map);
+    const route = L.geoJSON({type:'FeatureCollection',features:routes.features.filter(f=>f.properties.date===d.date)},{style:f=>({color:d.color,weight:5,opacity:.85})}).addTo(map);
     const stops = d.stops.map((s,i)=>{
-      const marker = L.marker([s.lat,s.lon],{title:`${shortDate(d.date)} 第 ${i+1} 站 ${s.name}`,icon:L.divIcon({className:'number-marker',html:`<span class="marker-circle" style="--marker-color:${d.color}">${i+1}</span>`,iconSize:[28,28],iconAnchor:[14,14]})}).bindPopup(popup(s),{closeButton:false}).addTo(map);
+      const peers = shared.get(`${s.lat},${s.lon}`);
+      const angle = 2*Math.PI*peers.indexOf(s)/peers.length;
+      const position = peers.length > 1 ? [s.lat + .0007*Math.sin(angle),s.lon + .0008*Math.cos(angle)] : [s.lat,s.lon];
+      const marker = L.marker(position,{title:`${shortDate(d.date)} 第 ${i+1} 站 ${s.name}`,icon:stopIcon(d.color,i,false)}).bindPopup(popup(s),{closeButton:false}).addTo(map);
       marker.on('click',()=>selectDay(d.date,false,false));
       markers.set(`${d.date}:${i}`,marker); return marker;
     });
-    dayLayers.set(d.date,{route,stops});
+    dayLayers.set(d.date,{route,stops,color:d.color});
   });
   extraLayer=L.layerGroup();
   trip.extras.forEach((s,i)=>{ const marker=L.marker([s.lat,s.lon],{title:`备选：${s.name}`,icon:L.divIcon({className:'extra-marker',iconSize:[12,12],iconAnchor:[6,6]})}).bindPopup(popup(s),{closeButton:false}).addTo(extraLayer); markers.set(`extra:${i}`,marker); });
@@ -95,6 +108,7 @@ function showStop(key) {
   marker.openPopup();
 }
 function bindEvents() {
+  $('map-lock').addEventListener('click',()=>{ const unlock=!map.dragging.enabled(); if(unlock)map.dragging.enable();else map.dragging.disable(); $('map-lock').setAttribute('aria-pressed',String(unlock)); $('map-lock').textContent=unlock ? '锁定地图，继续滚动' : '点击地图解锁拖动'; });
   $('day-selector').addEventListener('click',e=>{const b=e.target.closest('[data-day]'); if(b)selectDay(b.dataset.day);});
   $('reset-map').addEventListener('click',()=>selectDay('all',false));
   $('extras-toggle').addEventListener('change',e=>{if(map)e.target.checked ? extraLayer.addTo(map) : map.removeLayer(extraLayer);});
@@ -108,13 +122,24 @@ function bindEvents() {
   });
   $('close-lightbox').addEventListener('click',()=>$('lightbox').close());
   $('lightbox').addEventListener('click',e=>{if(e.target===$('lightbox')) {const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});
-  document.addEventListener('error',e=>{if(e.target.tagName!=='IMG')return;const img=e.target;if(img.id==='lightbox-image'){img.hidden=true;$('lightbox-caption').insertAdjacentHTML('afterbegin','<p>照片暂不可用</p>');return;}const p=document.createElement('span');p.className=`${img.className} placeholder`;p.textContent=emoji[img.dataset.category]||'📷';p.setAttribute('aria-label','照片暂不可用');img.replaceWith(p);},true);
+  document.addEventListener('error',e=>{if(e.target.tagName!=='IMG')return;const img=e.target;if(img.id==='lightbox-image'){img.hidden=true;$('lightbox-caption').insertAdjacentHTML('afterbegin','<p>照片暂不可用</p>');return;}const p=document.createElement('span');p.className=`${img.className} placeholder`;p.innerHTML=`<span>${emoji[img.dataset.category]||'📷'}</span><span class="placeholder-name">${escapeHTML(img.dataset.name || img.alt)}</span>`;p.setAttribute('aria-label','照片暂不可用');img.replaceWith(p);},true);
+}
+function initSectionNav() {
+  const links = [...document.querySelectorAll('.section-nav a')];
+  const visible = new Set();
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting)visible.add(entry.target.id);else visible.delete(entry.target.id); });
+    const active = links.find(link=>visible.has(link.hash.slice(1)));
+    links.forEach(link=>{ if(link===active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current'); });
+  },{rootMargin:'-5% 0px -45% 0px',threshold:0});
+  links.forEach(link=>observer.observe(document.querySelector(link.hash)));
 }
 async function getJSON(file) { const response=await fetch(file);if(!response.ok)throw new Error(`${file}: ${response.status}`);return response.json(); }
 async function start() {
   try {
     [trip,routes,credits]=await Promise.all([getJSON('trip.json'),getJSON('routes.geojson'),getJSON('credits.json')]);
-    bindEvents();render();initMap();$('status').textContent='';
+    trip.days.forEach((d,i)=>{ d.color=palette[i%palette.length]; });
+    bindEvents();render();initMap();initSectionNav();$('status').textContent='';
   } catch(error) { console.error(error);$('status').textContent='旅行数据载入失败，请检查网络后刷新。请通过网站地址打开本页。'; }
 }
 start();
