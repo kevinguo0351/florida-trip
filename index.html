@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11666b"><meta name="description" content="佛罗里达公路旅行：每日路线、沿途停靠、餐厅备选与预订清单。">
+<title>Florida 公路旅行</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#timeline">跳到每日行程</a>
+<header class="hero"><div class="wrap"><p class="eyebrow">海风 · 日落 · 公路</p><h1 id="title">Florida 公路旅行</h1><p id="subtitle"></p><p id="dates" class="date-range"></p><div id="people" class="people"></div><div id="stats" class="stats"></div></div></header>
+<nav class="section-nav" aria-label="页面导航"><a href="#journey">路线与行程</a><a href="#gallery-section">旅行相册</a><a href="#extras-section">餐厅与备选</a><a href="#todo-section">预订清单</a><a href="#budget-section">预算与酒店</a></nav>
+<main class="wrap"><p id="status" role="status">正在载入旅行指南…</p>
+<section id="journey" class="journey" aria-label="路线与每日行程">
+<div class="map-column"><div class="map-panel"><div class="section-heading"><div><p class="eyebrow">一路向海</p><h2>跟着地图出发</h2></div><button id="reset-map" type="button">查看全程</button></div><div id="day-selector" class="day-selector" aria-label="选择日期"></div><div id="map" aria-label="佛罗里达行程互动地图"></div><div class="map-tools"><label><input id="extras-toggle" type="checkbox"> 备选/餐厅研究</label><span>点击站点查看详情与导航</span></div><p id="map-status" role="status"></p></div></div>
+<div id="timeline" class="timeline" tabindex="-1"><div class="section-heading"><div><p class="eyebrow">每天都有新风景</p><h2>每日行程</h2></div><span id="day-count"></span></div><div id="days"></div></div>
+</section>
+<section id="gallery-section"><div class="section-heading"><div><p class="eyebrow">旅途预览</p><h2>旅行相册</h2></div></div><div id="gallery" class="gallery"></div></section>
+<section id="extras-section"><div class="section-heading"><div><p class="eyebrow">留一点随性</p><h2>餐厅研究 & 备选景点</h2></div></div><div id="extras" class="extras-grid"></div></section>
+<section id="todo-section"><div class="section-heading"><div><p class="eyebrow">出发前，心里有数</p><h2>待办 / 预订清单</h2></div><span id="todo-count" aria-live="polite"></span></div><p class="muted">勾选自动保存在当前浏览器。</p><div id="todo" class="todo-list"></div><p id="storage-status" role="status"></p></section>
+<section id="budget-section"><div class="section-heading"><div><p class="eyebrow">把预算花在喜欢的地方</p><h2>预算与住宿</h2></div></div><div class="budget-layout"><div id="budget" class="panel"></div><div id="hotels" class="panel"></div></div></section>
+<section><div class="section-heading"><h2>注意事项</h2></div><ul id="tips" class="tips"></ul></section>
+</main>
+<footer class="wrap"><p>地图 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>；照片来自 Wikimedia Commons，按各自许可使用</p><p>最后更新：<time datetime="2026-11-20">2026 年 11 月 20 日</time></p></footer>
+<dialog id="lightbox" aria-label="照片预览"><button id="close-lightbox" class="close" aria-label="关闭照片">×</button><img id="lightbox-image" alt=""><div id="lightbox-caption"></div></dialog>
+<noscript><p class="wrap">请启用 JavaScript 以载入行程、地图和清单。</p></noscript>
+</body></html>
