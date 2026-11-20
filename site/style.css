@@ -42,3 +42,7 @@ small{font-size:13px}
 }
 
 .day-pill{border-color:var(--day-color,var(--ocean))}.leaflet-container .leaflet-control-attribution{font-size:13px;color:#344f52}.leaflet-control-attribution a{color:#07575c}
+/* hermes fixes */
+body,button,input,select,textarea,p,li,span,small,div{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Noto Sans SC","Microsoft YaHei",sans-serif}
+.thumb.placeholder .placeholder-name{display:none}
+.thumb.placeholder{font-size:28px}
