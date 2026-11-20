@@ -1,3 +1,5 @@
 fetch.log
 *.py
 places.txt
+qa/
+codex.log
