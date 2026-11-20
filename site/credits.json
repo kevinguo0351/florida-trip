@@ -148,5 +148,65 @@
   "page": "https://commons.wikimedia.org/wiki/File:Bok_Tower_at_Work.jpg",
   "artist": "Milesb1217",
   "license": "CC BY-SA 4.0"
+ },
+ "vizcaya": {
+  "file": "img/vizcaya.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Villa_Vizcaya_20110228.jpg",
+  "artist": "Averette",
+  "license": "CC BY 3.0"
+ },
+ "keybiscayne": {
+  "file": "img/keybiscayne.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:CapeFloridaLight.jpg",
+  "artist": "Dr Zak at English Wikipedia",
+  "license": "CC BY-SA 3.0"
+ },
+ "sharkvalley": {
+  "file": "img/sharkvalley.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Shark_Valley_Tower.jpg",
+  "artist": "Everglades National Park Photo",
+  "license": "Public domain"
+ },
+ "lasolas": {
+  "file": "img/lasolas.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:LasOlasBlvd.JPG",
+  "artist": "Chaplin62",
+  "license": "CC BY-SA 3.0"
+ },
+ "hardrock": {
+  "file": "img/hardrock.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Seminole_Hard_Rock_Casino_Tampa_Cash_Center_with_Gambling_help_posted.jpg",
+  "artist": "Wales",
+  "license": "CC BY-SA 4.0"
+ },
+ "elreloj": {
+  "file": "img/elreloj.png",
+  "page": "https://commons.wikimedia.org/wiki/File:La_Flor_De_Cuesta_Rey.png",
+  "artist": "J.C. Newman Cigar Company",
+  "license": "Public domain"
+ },
+ "metromover": {
+  "file": "img/metromover.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Metromover_double-unit_train_Omni_2012-04.jpg",
+  "artist": "Ed Webster",
+  "license": "CC BY 2.0"
+ },
+ "lakeland": {
+  "file": "img/lakeland.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lakeland_city_hall_lakeland_florida.jpg",
+  "artist": "Connor J. Williams",
+  "license": "CC BY 3.0"
+ },
+ "tpa": {
+  "file": "img/tpa.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tampa_Intl_Oct2022.jpg",
+  "artist": "Austin Dunbar",
+  "license": "CC BY-SA 4.0"
+ },
+ "vineland": {
+  "file": "img/vineland.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Orlando_Premium_Outlets_08.JPG",
+  "artist": "Miosotis Jade",
+  "license": "CC BY-SA 4.0"
  }
 }
