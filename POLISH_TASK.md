@@ -1,0 +1,10 @@
+Polish pass on the static site in site/ (see CODEX_TASK.md for context; keep all its constraints). Fix these QA findings:
+1. Map markers overlap in the '全部' view (Clearwater, Orlando, Miami clusters) and numbering restarts per day so numbers are ambiguous. In '全部' view show small colored dots (no numbers) per day; show numbered markers ONLY for the selected day. Slightly offset markers that share identical coordinates (e.g. TPA appears 3 times on different days).
+2. Default map view must fitBounds to ALL routes with padding (whole Florida loop visible). On desktop make the map column sticky (top:12px, height: calc(100vh - 24px)) so it stays visible while scrolling the timeline.
+3. On mobile: make the day selector a single horizontally scrollable row (no wrap), and make it sticky at the top of the viewport while scrolling the timeline section, so users can switch days anywhere. Map height ~50vh. Disable one-finger map drag on touch (use Leaflet dragging: !L.Browser.mobile plus tap to enable, or a '点击地图解锁拖动' overlay) to avoid scroll trap.
+4. Use more distinguishable day colors: override in JS with this palette by day index: ['#e4572e','#f2a900','#0aa1dd','#c2185b','#2e9e44','#6a4c93','#8d5524','#37474f'] and use the same color for route, markers, chips and card border.
+5. Hero: keep the date range '11/23–11/30' on one line (white-space:nowrap); don't let the route subtitle line start with an arrow (wrap each '→ City' segment in nowrap spans). Section nav: horizontal scroll with padding on mobile, highlight active section while scrolling (IntersectionObserver).
+6. Add a small map legend (day color -> date) collapsible on mobile.
+7. Gallery currently only shows a few images; also show per-stop thumbnails in timeline when credits.json has the img_key. Placeholders for missing ones should look intentional (gradient by day color + category emoji + place name).
+8. Increase small text to >= 13px and improve contrast of grey text (WCAG AA).
+Verify with node --check and by serving site/ locally; then git commit.

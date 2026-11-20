@@ -3,3 +3,5 @@ fetch.log
 places.txt
 qa/
 codex.log
+__pycache__/
+codex*.log

@@ -22,5 +22,119 @@
   "page": "https://commons.wikimedia.org/wiki/File:Tampa_architectural_photos_256.jpg",
   "artist": "Barbthebuilder",
   "license": "CC BY-SA 3.0"
+ },
+ "caladesi": {
+  "file": "img/caladesi.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Caladesi_trail_oak.jpg",
+  "artist": "No machine-readable author provided. Philipp Michel Reichold assumed (based on c",
+  "license": "CC BY-SA 2.5"
+ },
+ "honeymoon": {
+  "file": "img/honeymoon.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Honeymoon_Island_State_Park_(Image_1).jpg",
+  "artist": "Christopher Hollis",
+  "license": "Public domain"
+ },
+ "tarpon": {
+  "file": "img/tarpon.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dodecanese_Avenue_in_Tarpon_Springs.jpg",
+  "artist": "AbeEzekowitz at English Wikipedia",
+  "license": "CC BY 2.5"
+ },
+ "pier60": {
+  "file": "img/pier60.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Clearwater_Beach_(54357452307).jpg",
+  "artist": "ajay_suresh",
+  "license": "CC BY 2.0"
+ },
+ "fsc": {
+  "file": "img/fsc.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lakeland_FSC_Pfeiffer_Chapel01.jpg",
+  "artist": "Ebyabe",
+  "license": "CC BY-SA 2.5"
+ },
+ "springs": {
+  "file": "img/springs.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Disney_Springs_Ariel_View.jpg",
+  "artist": "Antgiant",
+  "license": "CC BY-SA 4.0"
+ },
+ "mk": {
+  "file": "img/mk.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinderella_Castle,_Magic_Kingdom_(2026).jpg",
+  "artist": "TheWanderingTraders",
+  "license": "CC BY-SA 4.0"
+ },
+ "celebration": {
+  "file": "img/celebration.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Celebration_residential_street_tree_canopy_celebration_florida.jpg",
+  "artist": "Connor J. Williams",
+  "license": "CC BY 3.0"
+ },
+ "ksc": {
+  "file": "img/ksc.png",
+  "page": "https://commons.wikimedia.org/wiki/File:KSC_Visitor_Complex_logo.svg",
+  "artist": "Kennedy Space Center",
+  "license": "Public domain"
+ },
+ "saturnv": {
+  "file": "img/saturnv.png",
+  "page": "https://commons.wikimedia.org/wiki/File:KSC_Visitor_Complex_logo.svg",
+  "artist": "Kennedy Space Center",
+  "license": "Public domain"
+ },
+ "versailles": {
+  "file": "img/versailles.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:2008-0426-FL-Versailles-EXT.jpg",
+  "artist": "Bobak Ha'Eri",
+  "license": "CC BY 3.0"
+ },
+ "southpointe": {
+  "file": "img/southpointe.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ocean_drive_day_2009j.JPG",
+  "artist": "chensiyuan",
+  "license": "CC BY-SA 4.0"
+ },
+ "joes": {
+  "file": "img/joes.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Joe%27s_Stone_Crab_2019.jpg",
+  "artist": "Cullen328",
+  "license": "CC BY-SA 3.0"
+ },
+ "design": {
+  "file": "img/design.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Buckminster_Fuller%27s_Fly%27s_Eye_Dome.jpg",
+  "artist": "Ven-Lib",
+  "license": "CC BY-SA 4.0"
+ },
+ "brickell": {
+  "file": "img/brickell.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Miami_neighborhoodsmap.png",
+  "artist": "Comayagua99 (talk)",
+  "license": "CC BY-SA 3.0"
+ },
+ "oasis": {
+  "file": "img/oasis.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_Cypress_National_Preserve.jpg",
+  "artist": "Antonio Chaves",
+  "license": "CC BY-SA 4.0"
+ },
+ "naples": {
+  "file": "img/naples.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bayside_www.florida-infos.com_-_panoramio_(1).jpg",
+  "artist": "Franz Stellbrink",
+  "license": "CC BY 3.0"
+ },
+ "berns": {
+  "file": "img/berns.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Bern%27s_Steak_House.svg",
+  "artist": "Bern's Steak House",
+  "license": "Public domain"
+ },
+ "zoo": {
+  "file": "img/zoo.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lowry_Park_Zoo_Sign_in_Tampa.jpg",
+  "artist": "TampAGS, for AGS Media",
+  "license": "CC BY-SA 3.0"
  }
 }
