@@ -1,0 +1,26 @@
+{
+ "lasegunda": {
+  "file": "img/lasegunda.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:La_Segunda_Central_Bakery.jpg",
+  "artist": "LittleT889",
+  "license": "CC BY-SA 4.0"
+ },
+ "ybor": {
+  "file": "img/ybor.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Centro_Ybor,_Ybor_City,_Tampa,_Florida.jpg",
+  "artist": "Peter K Burian",
+  "license": "CC BY-SA 4.0"
+ },
+ "columbia": {
+  "file": "img/columbia.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Columbia,_Ybor_City.jpg",
+  "artist": "LittleT889",
+  "license": "CC BY 4.0"
+ },
+ "riverwalk": {
+  "file": "img/riverwalk.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tampa_architectural_photos_256.jpg",
+  "artist": "Barbthebuilder",
+  "license": "CC BY-SA 3.0"
+ }
+}
