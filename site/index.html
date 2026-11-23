@@ -12,7 +12,7 @@
 <body>
 <a class="skip" href="#timeline">跳到每日行程</a>
 <header class="hero"><div class="wrap"><p class="eyebrow">海风 · 日落 · 公路</p><h1 id="title">Florida 公路旅行</h1><p id="subtitle"></p><p id="dates" class="date-range"></p><div id="people" class="people"></div><div id="stats" class="stats"></div></div></header>
-<nav class="section-nav" aria-label="页面导航"><a href="#journey">路线与行程</a><a href="#gallery-section">旅行相册</a><a href="#extras-section">餐厅与备选</a><a href="#todo-section">预订清单</a><a href="#budget-section">预算与酒店</a></nav>
+<nav class="section-nav" aria-label="页面导航"><a href="#journey">路线与行程</a><a href="#gallery-section">旅行相册</a><a href="#extras-section">餐厅与备选</a><a href="#team-section">团队分工</a><a href="#todo-section">预订清单</a><a href="#budget-section">预算与酒店</a></nav>
 <main class="wrap"><p id="status" role="status">正在载入旅行指南…</p>
 <section id="journey" class="journey" aria-label="路线与每日行程">
 <div class="map-column"><div class="map-panel"><div class="section-heading"><div><p class="eyebrow">一路向海</p><h2>跟着地图出发</h2></div><button id="reset-map" type="button">查看全程</button></div><div class="map-shell"><div id="map" aria-label="佛罗里达行程互动地图"></div><button id="map-lock" type="button" aria-pressed="false">点击地图解锁拖动</button></div><details id="map-legend" class="map-legend" open><summary>每日路线图例</summary><div id="legend-items"></div></details><div class="map-tools"><label><input id="extras-toggle" type="checkbox"> 备选/餐厅研究</label><span>点击站点查看详情与导航</span></div><p id="map-status" role="status"></p></div></div>
@@ -20,6 +20,7 @@
 </section>
 <section id="gallery-section"><div class="section-heading"><div><p class="eyebrow">旅途预览</p><h2>旅行相册</h2></div></div><div id="gallery" class="gallery"></div></section>
 <section id="extras-section"><div class="section-heading"><div><p class="eyebrow">留一点随性</p><h2>餐厅研究 & 备选景点</h2></div></div><div id="extras" class="extras-grid"></div></section>
+<section id="team-section"><div class="section-heading"><div><p class="eyebrow">把旅行当项目来跑</p><h2>团队分工</h2></div></div><div id="team"></div></section>
 <section id="todo-section"><div class="section-heading"><div><p class="eyebrow">出发前，心里有数</p><h2>待办 / 预订清单</h2></div><span id="todo-count" aria-live="polite"></span></div><p class="muted">勾选自动保存在当前浏览器。</p><div id="todo" class="todo-list"></div><p id="storage-status" role="status"></p></section>
 <section id="budget-section"><div class="section-heading"><div><p class="eyebrow">把预算花在喜欢的地方</p><h2>预算与住宿</h2></div></div><div class="budget-layout"><div id="budget" class="panel"></div><div id="hotels" class="panel"></div></div></section>
 <section><div class="section-heading"><h2>注意事项</h2></div><ul id="tips" class="tips"></ul></section>
