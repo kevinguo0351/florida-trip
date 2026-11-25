@@ -2,30 +2,122 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#11666b"><meta name="description" content="佛罗里达公路旅行：每日路线、沿途停靠、餐厅备选与预订清单。">
+<meta name="theme-color" content="#11666b">
+<meta name="description" content="Florida road trip 11/23–11/30 · project dashboard, Gantt, Kanban, map and budget. 佛罗里达公路旅行项目看板。">
+<meta property="og:title" content="Florida Road Trip · Project Dashboard">
+<meta property="og:description" content="8 days · 1,296 km · 4 people. Planned like a project: dashboard, Gantt, Kanban, interactive map and budget.">
+<meta property="og:image" content="img/pier60.jpg">
 <title>Florida 公路旅行</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dash.css">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script defer src="app.js"></script>
 </head>
 <body>
-<a class="skip" href="#timeline">跳到每日行程</a>
-<header class="hero"><div class="wrap"><p class="eyebrow">海风 · 日落 · 公路</p><h1 id="title">Florida 公路旅行</h1><p id="subtitle"></p><p id="dates" class="date-range"></p><div id="people" class="people"></div><div id="stats" class="stats"></div></div></header>
-<nav class="section-nav" aria-label="页面导航"><a href="#journey">路线与行程</a><a href="#gallery-section">旅行相册</a><a href="#extras-section">餐厅与备选</a><a href="#team-section">团队分工</a><a href="#todo-section">预订清单</a><a href="#budget-section">预算与酒店</a></nav>
-<main class="wrap"><p id="status" role="status">正在载入旅行指南…</p>
-<section id="journey" class="journey" aria-label="路线与每日行程">
-<div class="map-column"><div class="map-panel"><div class="section-heading"><div><p class="eyebrow">一路向海</p><h2>跟着地图出发</h2></div><button id="reset-map" type="button">查看全程</button></div><div class="map-shell"><div id="map" aria-label="佛罗里达行程互动地图"></div><button id="map-lock" type="button" aria-pressed="false">点击地图解锁拖动</button></div><details id="map-legend" class="map-legend" open><summary>每日路线图例</summary><div id="legend-items"></div></details><div class="map-tools"><label><input id="extras-toggle" type="checkbox"> 备选/餐厅研究</label><span>点击站点查看详情与导航</span></div><p id="map-status" role="status"></p></div></div>
-<div id="day-selector" class="day-selector" aria-label="选择日期"></div><div id="timeline" class="timeline" tabindex="-1"><div class="section-heading"><div><p class="eyebrow">每天都有新风景</p><h2>每日行程</h2></div><span id="day-count"></span></div><div id="days"></div></div>
+<div id="progress" aria-hidden="true"></div>
+<a class="skip" href="#timeline" data-i18n="skip">跳到每日行程</a>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">🌴 <span data-i18n="brand">Florida 公路旅行</span></a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</div>
+
+<header class="hero" id="top"><div class="wrap">
+  <p class="eyebrow" data-i18n="heroEyebrow">海风 · 日落 · 公路</p>
+  <h1 id="title">Florida 公路旅行</h1>
+  <p id="subtitle"></p><p id="dates" class="date-range"></p>
+  <div id="people" class="people"></div>
+  <div class="hero-cta">
+    <a class="btn primary" href="#dashboard-section" data-i18n="ctaDash">查看项目看板</a>
+    <a class="btn" href="#journey" data-i18n="ctaMap">打开路线地图</a>
+    <a class="btn ghost" href="#ledger" data-ledger data-i18n="ctaLedger">财务入口 ↗</a>
+  </div>
+</div></header>
+
+<nav class="section-nav" aria-label="Sections"></nav>
+
+<main class="wrap"><p id="status" role="status">Loading…</p>
+
+<section id="dashboard-section" class="reveal">
+  <div class="section-heading"><div><p class="eyebrow" data-i18n="dashEyebrow">项目总览</p><h2 data-i18n="dashTitle">Dashboard</h2></div><span class="pill-live"><i></i><span data-i18n="live">实时</span></span></div>
+  <div id="kpis" class="kpis"></div>
+  <div class="dash-grid">
+    <div class="panel"><h3 data-i18n="chartDrive">每天驾车距离（公里）</h3><div id="drive-chart" class="bar-chart"></div></div>
+    <div class="panel"><h3 data-i18n="chartBudget">预算结构（估算，美元）</h3><div id="budget-donut" class="donut-wrap"></div></div>
+    <div class="panel"><h3 data-i18n="chartTasks">任务进度</h3><div id="task-progress"></div></div>
+  </div>
 </section>
-<section id="gallery-section"><div class="section-heading"><div><p class="eyebrow">旅途预览</p><h2>旅行相册</h2></div></div><div id="gallery" class="gallery"></div></section>
-<section id="extras-section"><div class="section-heading"><div><p class="eyebrow">留一点随性</p><h2>餐厅研究 & 备选景点</h2></div></div><div id="extras" class="extras-grid"></div></section>
-<section id="team-section"><div class="section-heading"><div><p class="eyebrow">把旅行当项目来跑</p><h2>团队分工</h2></div></div><div id="team"></div></section>
-<section id="todo-section"><div class="section-heading"><div><p class="eyebrow">出发前，心里有数</p><h2>待办 / 预订清单</h2></div><span id="todo-count" aria-live="polite"></span></div><p class="muted">勾选自动保存在当前浏览器。</p><div id="todo" class="todo-list"></div><p id="storage-status" role="status"></p></section>
-<section id="budget-section"><div class="section-heading"><div><p class="eyebrow">把预算花在喜欢的地方</p><h2>预算与住宿</h2></div></div><div class="budget-layout"><div id="budget" class="panel"></div><div id="hotels" class="panel"></div></div></section>
-<section><div class="section-heading"><h2>注意事项</h2></div><ul id="tips" class="tips"></ul></section>
+
+<section id="gantt-section" class="reveal">
+  <div class="section-heading"><div><p class="eyebrow" data-i18n="ganttEyebrow">时间线</p><h2 data-i18n="ganttTitle">甘特图</h2></div></div>
+  <div class="panel"><h3 data-i18n="ganttPhase">旅程阶段（8 天）</h3><div id="gantt-phase" class="gantt"></div></div>
+  <div class="panel" style="margin-top:16px">
+    <div class="gantt-head"><h3 data-i18n="ganttDay">每日时间表</h3><div id="gantt-tabs" class="gantt-tabs"></div></div>
+    <div id="gantt-day" class="gantt"></div>
+    <p class="muted small" data-i18n="ganttHint">点任意色条，地图会飞到那个站点。</p>
+  </div>
+</section>
+
+<section id="journey" class="journey" aria-label="Route">
+  <div class="map-column"><div class="map-panel">
+    <div class="section-heading"><div><p class="eyebrow" data-i18n="mapEyebrow">一路向海</p><h2 data-i18n="mapTitle">跟着地图出发</h2></div>
+      <div class="map-actions"><label class="follow"><input id="follow-toggle" type="checkbox" checked> <span data-i18n="follow">滚动联动</span></label><button id="reset-map" type="button" data-i18n="reset">查看全程</button></div></div>
+    <div class="map-shell"><div id="map" aria-label="map"></div><button id="map-lock" type="button" aria-pressed="false" data-i18n="unlock">点击地图解锁拖动</button><div id="map-hud" class="map-hud" hidden></div></div>
+    <details id="map-legend" class="map-legend" open><summary data-i18n="legend">每日路线图例</summary><div id="legend-items"></div></details>
+    <div class="map-tools"><label><input id="extras-toggle" type="checkbox"> <span data-i18n="showExtras">显示餐厅/备选</span></label><span data-i18n="mapHint">悬停列表 ↔ 地图高亮，点击互相定位</span></div>
+    <p id="map-status" role="status"></p>
+  </div></div>
+  <div id="day-selector" class="day-selector"></div>
+  <div id="timeline" class="timeline" tabindex="-1">
+    <div class="section-heading"><div><p class="eyebrow" data-i18n="daysEyebrow">每天都有新风景</p><h2 data-i18n="daysTitle">每日行程</h2></div><span id="day-count"></span></div>
+    <div id="days"></div>
+  </div>
+</section>
+
+<section id="kanban-section" class="reveal">
+  <div class="section-heading"><div><p class="eyebrow" data-i18n="kanbanEyebrow">分工与任务</p><h2 data-i18n="kanbanTitle">任务看板</h2></div><button id="kanban-reset" type="button" class="btn small" data-i18n="kanbanReset">重置</button></div>
+  <div id="kanban-filter" class="kanban-filter"></div>
+  <div id="kanban" class="kanban"></div>
+  <p class="muted small" data-i18n="kanbanHint">拖动卡片换列，状态保存在本浏览器。</p>
+</section>
+
+<section id="team-section" class="reveal"><div class="section-heading"><div><p class="eyebrow" data-i18n="teamEyebrow">把旅行当项目来跑</p><h2 data-i18n="teamTitle">团队分工</h2></div></div><div id="team"></div></section>
+
+<section id="gallery-section" class="reveal"><div class="section-heading"><div><p class="eyebrow" data-i18n="galleryEyebrow">旅途预览</p><h2 data-i18n="galleryTitle">旅行相册</h2></div></div><div id="gallery" class="gallery"></div></section>
+
+<section id="extras-section" class="reveal"><div class="section-heading"><div><p class="eyebrow" data-i18n="extrasEyebrow">留一点随性</p><h2 data-i18n="extrasTitle">餐厅研究 & 备选景点</h2></div></div><div id="extras" class="extras-grid"></div></section>
+
+<section id="todo-section" class="reveal"><div class="section-heading"><div><p class="eyebrow" data-i18n="todoEyebrow">出发前，心里有数</p><h2 data-i18n="todoTitle">预订清单</h2></div><span id="todo-count" aria-live="polite"></span></div><div id="todo" class="todo-list"></div><p id="storage-status" role="status"></p></section>
+
+<section id="budget-section" class="reveal">
+  <div class="section-heading"><div><p class="eyebrow" data-i18n="budgetEyebrow">把预算花在喜欢的地方</p><h2 data-i18n="budgetTitle">预算与财务</h2></div><a class="btn primary" href="#ledger" data-ledger data-i18n="openLedger">打开财务台账 ↗</a></div>
+  <div class="budget-layout"><div id="budget" class="panel"></div><div id="hotels" class="panel"></div></div>
+</section>
+
+<section id="tips-section" class="reveal"><div class="section-heading"><h2 data-i18n="tipsTitle">注意事项</h2></div><ul id="tips" class="tips"></ul></section>
 </main>
-<footer class="wrap"><p>地图 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>；照片来自 Wikimedia Commons，按各自许可使用</p><p>最后更新：<time datetime="2026-11-20">2026 年 11 月 20 日</time></p></footer>
-<dialog id="lightbox" aria-label="照片预览"><button id="close-lightbox" class="close" aria-label="关闭照片">×</button><img id="lightbox-image" alt=""><div id="lightbox-caption"></div></dialog>
-<noscript><p class="wrap">请启用 JavaScript 以载入行程、地图和清单。</p></noscript>
+
+<footer class="wrap"><p><span data-i18n="footMap">地图</span> © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · <span data-i18n="footPhoto">照片来自 Wikimedia Commons，按各自许可使用</span></p><p><span data-i18n="updated">最后更新</span>: <time datetime="2026-11-24">2026-11-24</time></p></footer>
+
+<!-- floating navigator: appears when the mouse nears the right edge -->
+<div id="nav-hotzone" aria-hidden="true"></div>
+<nav id="navigator" aria-label="Navigator"><div class="nav-title" data-i18n="navigator">导航</div><ol id="nav-list"></ol></nav>
+<button id="nav-fab" type="button" aria-controls="navigator" aria-expanded="false">☰</button>
+
+<dialog id="lightbox"><button id="close-lightbox" class="close" aria-label="close">×</button><img id="lightbox-image" alt=""><div id="lightbox-caption"></div></dialog>
+
+<dialog id="ledger-dialog" class="ledger-dialog">
+  <div class="ledger-head"><div><p class="eyebrow">Finance</p><h2 data-i18n="ledgerTitle">旅行财务台账</h2></div><button class="close" id="close-ledger" aria-label="close">×</button></div>
+  <div class="ledger-tabs"><span class="ledger-tab active" data-i18n="ledgerTabAll">全部支出</span><span class="ledger-tab" data-i18n="ledgerTabSplit">分摊</span><span class="ledger-tab" data-i18n="ledgerTabReceipts">票据</span></div>
+  <div id="ledger-body"></div>
+  <div class="ledger-foot"><span class="muted small" data-i18n="ledgerSync">已同步 · 共享台账</span><a class="btn small" href="#ledger" id="ledger-export" data-i18n="ledgerExport">导出 CSV</a></div>
+</dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p class="wrap">Please enable JavaScript.</p></noscript>
 </body></html>
