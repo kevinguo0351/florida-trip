@@ -1,0 +1,906 @@
+{
+"title": "Florida Road Trip · 11/23–11/30",
+"subtitle": "Tampa → Clearwater → Orlando → Space Coast → Miami → Everglades → Tampa",
+"days": [
+{
+"date": "2026-11-23",
+"dow": "Mon",
+"title": "Ybor City → Riverwalk → Clearwater",
+"color": "#e4572e",
+"sleep": "Clearwater (2 Queen Beds)",
+"notes": [
+"3 of us start; Rosemary lands 22:59",
+"Jasik arrives at TPA 00:27 and waits at the airport",
+"Nap after hotel check-in; Jasik can sleep until 18:00"
+],
+"stops": [
+{
+"id": "tpa",
+"name": "Tampa International Airport (TPA)",
+"cat": "transport",
+"lat": 27.97916,
+"lon": -82.53493,
+"note": "Land 06:03, pick up Hertz car",
+"img": null,
+"time": "06:03",
+"img_key": "tpa"
+},
+{
+"id": "lasegunda",
+"name": "La Segunda Bakery",
+"cat": "food",
+"lat": 27.96579,
+"lon": -82.4433,
+"note": "Breakfast: Cuban bread, guava pastry, cafecito; parking at the door",
+"img": null,
+"time": "07:00",
+"img_key": "lasegunda"
+},
+{
+"id": "elreloj",
+"name": "El Reloj Cigar Factory (J.C. Newman)",
+"cat": "sight",
+"lat": 27.9654,
+"lon": -82.4419,
+"note": "Free areas: museum, intro film, watch hand-rolling upstairs; paid tour skipped (sold out Monday); free parking",
+"img": null,
+"time": "09:00",
+"img_key": "elreloj"
+},
+{
+"id": "ybor",
+"name": "Ybor 7th Ave",
+"cat": "sight",
+"lat": 27.96028,
+"lon": -82.44298,
+"note": "~1 km walk; Tabanero Cigars lets you walk in and watch rolling",
+"img": null,
+"time": "10:15",
+"img_key": "ybor"
+},
+{
+"id": "columbia",
+"name": "Columbia Restaurant (Ybor flagship)",
+"cat": "food",
+"lat": 27.96001,
+"lon": -82.43513,
+"note": "Cuban/Spanish since 1905; great setting, average food; free parking lot",
+"img": null,
+"time": "11:30",
+"img_key": "columbia"
+},
+{
+"id": "history",
+"name": "Tampa Bay History Center",
+"cat": "sight",
+"lat": 27.94225,
+"lon": -82.44991,
+"note": "10:00–17:00; Cigar City and Cuban immigration history; $18.95/person; garage $10–15",
+"img": null,
+"time": "13:00",
+"img_key": "history"
+},
+{
+"id": "riverwalk",
+"name": "Riverwalk (Curtis Hixon Park)",
+"cat": "sight",
+"lat": 27.94905,
+"lon": -82.46189,
+"note": "Short 20–30 min walk, not the whole trail",
+"img": null,
+"time": "14:30",
+"img_key": "riverwalk"
+},
+{
+"id": "safetyharbor",
+"name": "Dinner in Safety Harbor",
+"cat": "food",
+"lat": 27.99085,
+"lon": -82.69316,
+"note": "~7 min from the Clearwater hotel; dark by then, dinner only",
+"img": null,
+"time": "18:30",
+"img_key": "safetyharbor"
+},
+{
+"id": "tpa",
+"name": "TPA: pick up Rosemary",
+"cat": "transport",
+"lat": 27.97916,
+"lon": -82.53493,
+"note": "Leave 22:15, she lands 22:59",
+"img": null,
+"time": "22:15",
+"img_key": "tpa"
+}
+],
+"alt": "Option: ZooTampa 9:30–13:00 ($50.95/person online, parking $10) → Cuban lunch at La Teresita → Clearwater; on a rainy day, Florida Aquarium (~$43/person)"
+},
+{
+"date": "2026-11-24",
+"dow": "Tue",
+"title": "Caladesi Island → Tarpon Springs → Sunset",
+"color": "#f3a712",
+"sleep": "Clearwater",
+"notes": [
+"Snacks only on the island; lunch moves to Tarpon Springs",
+"Sunset 17:36"
+],
+"stops": [
+{
+"id": "honeymoon",
+"name": "Honeymoon Island ferry dock",
+"cat": "park",
+"lat": 28.06863,
+"lon": -82.83194,
+"note": "State park $8/car; parking at the dock",
+"img": null,
+"time": "08:45",
+"img_key": "honeymoon"
+},
+{
+"id": "caladesi",
+"name": "Caladesi Island",
+"cat": "park",
+"lat": 28.03073,
+"lon": -82.81932,
+"note": "First ferry 10:00, $20/person round trip (buy at dock); on the island until 13:30, snacks only",
+"img": null,
+"time": "10:00",
+"img_key": "caladesi"
+},
+{
+"id": "mykonos",
+"name": "Tarpon Springs · Mykonos",
+"cat": "food",
+"lat": 28.15561,
+"lon": -82.76262,
+"note": "Locals' favorite Greek: grilled octopus, avgolemono soup, lamb shank with orzo, saganaki; plain room, so-so service; paid parking near the docks",
+"img": null,
+"time": "14:00",
+"img_key": "hellas"
+},
+{
+"id": "hellas",
+"name": "Hellas Bakery",
+"cat": "food",
+"lat": 28.15535,
+"lon": -82.76188,
+"note": "A few steps away for baklava; main dining is touristy, just get dessert",
+"img": null,
+"time": "15:15",
+"img_key": "hellas"
+},
+{
+"id": "pier60",
+"name": "Clearwater Beach · Pier 60",
+"cat": "sight",
+"lat": 27.97721,
+"lon": -82.8289,
+"note": "Arrive 17:00 for the 17:36 sunset; paid lot near Pier 60",
+"img": null,
+"time": "17:00",
+"img_key": "pier60"
+},
+{
+"id": "frenchys",
+"name": "Frenchy's Rockaway Grill",
+"cat": "food",
+"lat": 27.9806,
+"lon": -82.8273,
+"note": "Grouper sandwich, walk over",
+"img": null,
+"time": "18:00",
+"img_key": "frenchys"
+}
+],
+"alt": "Options: Weeki Wachee mermaid show (13:30/15:00, instead of Tarpon Springs); swim with manatees at Crystal River (leave 6–7 am, replaces Caladesi); Clearwater Marine Aquarium $41.95 (rain)"
+},
+{
+"date": "2026-11-25",
+"dow": "Wed",
+"title": "Frank Lloyd Wright in Lakeland → Disney Springs",
+"color": "#2e86ab",
+"sleep": "Near Disney Springs",
+"notes": [
+"Confirm Lightning Lane and bag storage tonight",
+"Early night before Disney"
+],
+"stops": [
+{
+"id": "fsc",
+"name": "Florida Southern · Frank Lloyd Wright tour",
+"cat": "sight",
+"lat": 28.03046,
+"lon": -81.94554,
+"note": "10:30, 90 min; book 24h ahead; ~$20/person; free campus parking",
+"img": null,
+"time": "10:30",
+"img_key": "fsc"
+},
+{
+"id": "lakeland",
+"name": "Lunch in downtown Lakeland",
+"cat": "food",
+"lat": 28.04404,
+"lon": -81.95193,
+"note": "Around Lake Mirror",
+"img": null,
+"time": "12:30",
+"img_key": "lakeland"
+},
+{
+"id": "springs",
+"name": "Disney Springs",
+"cat": "shop",
+"lat": 28.37116,
+"lon": -81.51837,
+"note": "Check in nearby (register all 4); shopping + dinner; free garages",
+"img": null,
+"time": "16:30",
+"img_key": "springs"
+}
+],
+"alt": "Options: Bok Tower Gardens (instead of the Wright tour); Gatorland ~$32/person"
+},
+{
+"date": "2026-11-26",
+"dow": "Thanksgiving",
+"title": "Magic Kingdom, all day",
+"color": "#a23b72",
+"sleep": "Celebration",
+"notes": [
+"Expect 15–20 km of walking",
+"Take the hotel shuttle, save $35 parking",
+"Fireworks 20:00, confirm in the Disney app"
+],
+"stops": [
+{
+"id": "mk",
+"name": "Magic Kingdom",
+"cat": "park",
+"lat": 28.41908,
+"lon": -81.58172,
+"note": "Early entry, Space Mountain first, then go land by land; mobile-order lunch/dinner; ticket ~$209/person + tax, Lightning Lane ~$40–45/person",
+"img": null,
+"time": "All day",
+"img_key": "mk"
+},
+{
+"id": "celebration",
+"name": "Celebration hotel",
+"cat": "hotel",
+"lat": 28.31906,
+"lon": -81.54087,
+"note": "Back to Disney Springs for car and bags, 21-min drive to check in",
+"img": null,
+"time": "Evening",
+"img_key": "celebration"
+}
+],
+"alt": "Option: EPCOT (9:00–21:00), fewer crowds, more food"
+},
+{
+"date": "2026-11-27",
+"dow": "Black Friday",
+"title": "Vineland Outlets → Kennedy Space Center → Miami",
+"color": "#3bb273",
+"sleep": "Miami (Brickell / Downtown / Airport)",
+"notes": [
+"Last Saturn V bus 14:30",
+"Plan 4 hours south on I-95 on Black Friday",
+"Check the launch schedule"
+],
+"stops": [
+{
+"id": "vineland",
+"name": "Vineland Premium Outlets",
+"cat": "shop",
+"lat": 28.38677,
+"lon": -81.4927,
+"note": "07:00–08:30, early = easy parking",
+"img": null,
+"time": "07:00",
+"img_key": "vineland"
+},
+{
+"id": "ksc",
+"name": "Kennedy Space Center (KSC)",
+"cat": "sight",
+"lat": 28.52428,
+"lon": -80.68186,
+"note": "10:15–14:45; adults-at-kids-price promo $67 (through 12/18); parking $15; lunch inside",
+"img": null,
+"time": "10:15",
+"img_key": "ksc"
+},
+{
+"id": "saturnv",
+"name": "Apollo / Saturn V Center",
+"cat": "sight",
+"lat": 28.60551,
+"lon": -80.66965,
+"note": "Take the bus out first, ~2 hours; then Atlantis and the Rocket Garden",
+"img": null,
+"time": "10:30",
+"img_key": "saturnv"
+},
+{
+"id": "versailles",
+"name": "Versailles (Cuban)",
+"cat": "food",
+"lat": 25.76499,
+"lon": -80.25277,
+"note": "Little Havana icon; parking lot at the door",
+"img": null,
+"time": "19:30",
+"img_key": "versailles"
+}
+],
+"alt": "Option: stop on Las Olas Blvd in Fort Lauderdale"
+},
+{
+"date": "2026-11-28",
+"dow": "Sat",
+"title": "Miami city day",
+"color": "#7768ae",
+"sleep": "Miami",
+"notes": [
+"~5–6 km walking, longest stretch 1.5 km",
+"Miami parking is mostly ParkMobile"
+],
+"stops": [
+{
+"id": "southpointe",
+"name": "South Pointe Park",
+"cat": "park",
+"lat": 25.76592,
+"lon": -80.13345,
+"note": "Good morning light, few people; weekend parking ~$20",
+"img": null,
+"time": "08:00",
+"img_key": "southpointe"
+},
+{
+"id": "oceandrive",
+"name": "Ocean Drive · Art Deco",
+"cat": "sight",
+"lat": 25.77204,
+"lon": -80.13251,
+"note": "Drive to the 12th St garage (~$2/h), walk ~1 km",
+"img": null,
+"time": "10:00",
+"img_key": "oceandrive"
+},
+{
+"id": "joes",
+"name": "Joe's Stone Crab (take-out)",
+"cat": "food",
+"lat": 25.76841,
+"lon": -80.13524,
+"note": "Stone crab is in season, pricey; cheaper spots a block off the beach",
+"img": null,
+"time": "12:00",
+"img_key": "joes"
+},
+{
+"id": "wynwood",
+"name": "Wynwood Walls",
+"cat": "sight",
+"lat": 25.80114,
+"lon": -80.19966,
+"note": "Wynwood Garage ~$30 for 3h; 1.5 km loop",
+"img": null,
+"time": "13:45",
+"img_key": "wynwood"
+},
+{
+"id": "design",
+"name": "Design District",
+"cat": "shop",
+"lat": 25.81264,
+"lon": -80.1913,
+"note": "Public garage",
+"img": null,
+"time": "15:45",
+"img_key": "design"
+},
+{
+"id": "brickell",
+"name": "Brickell dinner + skyline",
+"cat": "food",
+"lat": 25.76739,
+"lon": -80.19291,
+"note": "Leave the car, ride the free Metromover for the night view",
+"img": null,
+"time": "17:30",
+"img_key": "brickell"
+}
+],
+"alt": "Options: Vizcaya $25/person (instead of Design District); Key Biscayne lighthouse and beach"
+},
+{
+"date": "2026-11-29",
+"dow": "Sun",
+"title": "Tamiami Trail → Naples → Tampa",
+"color": "#c73e1d",
+"sleep": "Tampa (near airport)",
+"notes": [
+"US-41 is two-lane with no lights: daylight only",
+"Post-Thanksgiving Sunday traffic on I-75; arrive 17:00–19:00"
+],
+"stops": [
+{
+"id": "oasis",
+"name": "Big Cypress · Oasis Visitor Center",
+"cat": "park",
+"lat": 25.85736,
+"lon": -81.03351,
+"note": "Free, parking at the door, alligators",
+"img": null,
+"time": "09:30",
+"img_key": "oasis"
+},
+{
+"id": "naples",
+"name": "Lunch + gas in Naples",
+"cat": "food",
+"lat": 26.1422,
+"lon": -81.79429,
+"note": "Then north on I-75, ~3h15",
+"img": null,
+"time": "11:00",
+"img_key": "naples"
+},
+{
+"id": "berns",
+"name": "Bern's Steak House",
+"cat": "food",
+"lat": 27.9353,
+"lon": -82.4834,
+"note": "Farewell dinner: steak + upstairs Dessert Room; valet; ~$600 for 4; reserve ahead",
+"img": null,
+"time": "19:30",
+"img_key": "berns"
+}
+],
+"alt": "Option: Everglades Shark Valley 2-hour tram for alligators (instead of Big Cypress); or straight up I-75, 1 hour earlier"
+},
+{
+"date": "2026-11-30",
+"dow": "Mon",
+"title": "Flying home",
+"color": "#555555",
+"sleep": "—",
+"notes": [
+"Rosemary flies to JFK at 06:15",
+"Kevin & co. depart 17:20"
+],
+"stops": [
+{
+"id": "tpa",
+"name": "TPA: drop Rosemary + return car",
+"cat": "transport",
+"lat": 27.97916,
+"lon": -82.53493,
+"note": "Leave 04:00, return the car at the airport",
+"img": null,
+"time": "04:00",
+"img_key": "tpa"
+},
+{
+"id": "intlplaza",
+"name": "International Plaza",
+"cat": "shop",
+"lat": 27.96427,
+"lon": -82.52078,
+"note": "Lunch and a walk",
+"img": null,
+"time": "12:00",
+"img_key": "intlplaza"
+},
+{
+"id": "tpa",
+"name": "TPA departure",
+"cat": "transport",
+"lat": 27.97916,
+"lon": -82.53493,
+"note": "Uber to the airport at 15:00 for the 17:20 flight",
+"img": null,
+"time": "15:00",
+"img_key": "tpa"
+}
+],
+"alt": ""
+}
+],
+"extras": [
+{
+"id": "ulele",
+"name": "Ulele",
+"cat": "food",
+"lat": 27.95997,
+"lon": -82.46271,
+"note": "Riverside Native-Florida seafood hot spot; get the seafood risotto and grilled oysters; loud, long waits, inconsistent; skip the fried gator; $50–70/person",
+"img": null,
+"tags": [
+"#Riverside",
+"#NativeSeafood",
+"#Risotto",
+"#PhotogenicButBusy",
+"#Inconsistent"
+]
+},
+{
+"id": "oxford",
+"name": "Oxford Exchange",
+"cat": "food",
+"lat": 27.94495,
+"lon": -82.4646,
+"note": "Bookstore + glass-roof brunch, very photogenic; daytime only; mixed food reviews, slow service; reservations required; $30–45/person",
+"img": null,
+"tags": [
+"#BookstoreAtrium",
+"#LooksOverTaste",
+"#ReserveAhead",
+"#SlowService",
+"#BillInABook"
+]
+},
+{
+"id": "badfins",
+"name": "Badfins Food + Brew",
+"cat": "food",
+"lat": 27.97439,
+"lon": -82.82913,
+"note": "Clearwater Beach tacos + seafood; pineapple-cup cocktail; +4% card fee; $35–50/person",
+"img": null,
+"tags": [
+"#BeachBar",
+"#Tacos",
+"#PineappleCocktail",
+"#TouristZone",
+"#WaitUnderTent"
+]
+},
+{
+"id": "ajilimo",
+"name": "Aji Limo (Peruvian)",
+"cat": "food",
+"lat": 27.966,
+"lon": -82.491,
+"note": "Asian-palate friendly; grilled octopus, lomo saltado; seafood rice divisive, salty; weekday lunch $17.99; $50–60/person",
+"img": null,
+"tags": [
+"#PeruvianFusion",
+"#SeafoodRice",
+"#Octopus",
+"#Salty",
+"#ServiceHitOrMiss"
+]
+},
+{
+"id": "hardrock",
+"name": "Jubao Palace (inside Hard Rock casino)",
+"cat": "food",
+"lat": 27.99338,
+"lon": -82.37146,
+"note": "Best: BBQ trio and oxtail rice noodles; fried rice/noodles bland; open to 4 am; possible age limit; $30–45/person",
+"img": null,
+"tags": [
+"#CasinoCantonese",
+"#BBQ",
+"#OxtailNoodles",
+"#OpenTil4am",
+"#Lines"
+]
+},
+{
+"id": "lateresita",
+"name": "La Teresita",
+"cat": "food",
+"lat": 27.96646,
+"lon": -82.49654,
+"note": "Cuban home cooking since 1972, big and cheap; on the way to Clearwater",
+"img": null
+},
+{
+"id": "zoo",
+"name": "ZooTampa",
+"cat": "park",
+"lat": 28.01501,
+"lon": -82.46993,
+"note": "9:30–17:00; $50.95/person online; parking $10; Monday option",
+"img": null
+},
+{
+"id": "aquarium",
+"name": "Florida Aquarium",
+"cat": "park",
+"lat": 27.94407,
+"lon": -82.44488,
+"note": "Indoor rainy-day option; ~$43/person",
+"img": null
+},
+{
+"id": "weeki",
+"name": "Weeki Wachee Mermaids",
+"cat": "park",
+"lat": 28.51713,
+"lon": -82.57483,
+"note": "Underwater show since 1947, only in Florida; 13:30 / 15:00",
+"img": null
+},
+{
+"id": "crystal",
+"name": "Crystal River Manatees",
+"cat": "park",
+"lat": 28.88999,
+"lon": -82.58943,
+"note": "Manatee season from November; the only place in the US to legally swim with them",
+"img": null
+},
+{
+"id": "bok",
+"name": "Bok Tower Gardens",
+"cat": "park",
+"lat": 27.93603,
+"lon": -81.57582,
+"note": "Hilltop gardens and carillon tower",
+"img": null
+},
+{
+"id": "gatorland",
+"name": "Gatorland",
+"cat": "park",
+"lat": 28.35499,
+"lon": -81.4019,
+"note": "Alligator theme park, ~$32/person",
+"img": null
+},
+{
+"id": "vizcaya",
+"name": "Vizcaya Museum & Gardens",
+"cat": "sight",
+"lat": 25.7447,
+"lon": -80.21158,
+"note": "Italianate mansion + bayfront gardens; $25/person; closed Tuesdays",
+"img": null
+},
+{
+"id": "keybiscayne",
+"name": "Key Biscayne Lighthouse",
+"cat": "park",
+"lat": 25.66659,
+"lon": -80.15596,
+"note": "Quiet, clearer water than South Beach",
+"img": null
+},
+{
+"id": "sharkvalley",
+"name": "Shark Valley",
+"cat": "park",
+"lat": 25.75694,
+"lon": -80.76538,
+"note": "2-hour tram ride to see alligators",
+"img": null
+},
+{
+"id": "lasolas",
+"name": "Fort Lauderdale · Las Olas",
+"cat": "sight",
+"lat": 26.11947,
+"lon": -80.14326,
+"note": "Easy stop on the way to Miami",
+"img": null
+}
+],
+"hotels": {
+"note": "Broker quotes (CNY/night, tax incl.; reference only, pay only after getting a confirmation number you can verify on the official site)",
+"items": [
+[
+"Courtyard Brickell",
+"¥900–1455; lowest ¥1000–1040",
+"Budget basic, no breakfast"
+],
+[
+"Aloft Brickell",
+"¥900–940",
+"Cheapest; valet $40/night"
+],
+[
+"Hyatt Centric Brickell",
+"¥1204–1374",
+"Best-reviewed; + destination fee ~¥266/night + parking $40"
+],
+[
+"JW Marriott Marquis",
+"¥1900 for 2 nights (suspiciously low, verify)",
+"Great location, big rooms, dated"
+],
+[
+"Brickell Arch (Luxury Collection)",
+"¥1840",
+"Refined, but night construction next door"
+],
+[
+"Hollywood Beach Marriott",
+"¥1700 + resort fee",
+"On the sand, far from downtown"
+]
+]
+},
+"budget": {
+"total": "~$6,000–8,000 for 4 ($1,500–2,000 each), excl. flights and shopping",
+"rows": [
+[
+"Lodging, 7 nights",
+"$1,600–2,200"
+],
+[
+"Transport (car/gas/tolls/parking)",
+"$900–1,300"
+],
+[
+"Tickets & activities",
+"$1,400–1,700"
+],
+[
+"Food",
+"$2,000–3,000"
+]
+],
+"save": [
+"Bern's Dessert Room only: save ~$400",
+"Stay near Miami airport: save $100–150/night",
+"Skip Lightning Lane: save $120–150 (but long Thanksgiving lines)"
+]
+},
+"todo": [
+[
+"Magic Kingdom tickets 11/26",
+"Before departure",
+"One person buys 4 in the Disney app, shares via Family & Friends; everyone enables MagicMobile"
+],
+[
+"Bern's 11/29 dinner for 4",
+"Before departure",
+"Hardest to book"
+],
+[
+"Wright tour 11/25 10:30",
+"By 11/24 10:30",
+"Book 24h ahead"
+],
+[
+"KSC tickets 11/27",
+"Before departure",
+"Adults at kids price $67"
+],
+[
+"Lightning Lane Multi Pass",
+"Morning of 11/23 in the app",
+"Opens 3 days before for off-site guests; one person buys for all 4"
+],
+[
+"Caladesi ferry",
+"At the dock",
+"$20/person"
+],
+[
+"Hertz",
+"At pick-up",
+"Register every driver; ask about toll-pass fees or bring SunPass"
+],
+[
+"ParkMobile",
+"Before departure",
+"Most Miami parking uses it"
+]
+],
+"people": [
+[
+"Toby",
+"Project lead / lead driver"
+],
+[
+"Rosemary",
+"Food lead / co-driver · lands 11/23 22:59, flies to JFK 11/30 06:15"
+],
+[
+"Kevin",
+"Navigation & parking / Miami leg"
+],
+[
+"Jasik",
+"Finance & supplies / 11/29 day lead · lands TPA 11/23 00:27"
+]
+],
+"tips": [
+"Sunset ~17:30, fully dark by 18:00: outdoor plans in daylight",
+"No backtracking; no single walk over 1.5 km",
+"One room with 2 Queen Beds each night (not 2 Doubles)",
+"Cuban portions are big and salty: 3 mains for 4 people",
+"Deep-discount resale tickets are often fraud; Disney tickets are name-locked, highest risk",
+"Miami Seaquarium has permanently closed",
+"Disney tickets are non-transferable (fingerprint at first entry); buy only from Disney or authorized sellers",
+"Jasik waits ~5.5 h at TPA: eat in SLC, bring neck pillow, eye mask, power bank; terminal Marriott is an option"
+],
+"team": {
+"intro": "We run this trip like an 8-day project: each person owns one area and has the final say there; when things conflict, protect the time-critical milestones.",
+"roles": [
+{
+"name": "Toby",
+"title": "Project lead / lead driver",
+"owns": [
+"Master schedule and all bookings (tickets, tours, Bern's, hotels)",
+"Daily departure time and final calls",
+"Lead driver"
+],
+"do": [
+"Post today's departure time + first stop each morning",
+"Before each stop: arrival time, whose phone has the tickets, latest leave time",
+"Buy Lightning Lane for all 4 on the morning of 11/23",
+"On 11/27, make the last Saturn V bus (14:30)"
+],
+"learn": "Leading a team: delegating and letting others own their part"
+},
+{
+"name": "Rosemary",
+"title": "Food lead / co-driver",
+"owns": [
+"Where we eat and what we order",
+"Snacks, water, picnic supplies",
+"Swap driving with Toby on long legs"
+],
+"do": [
+"Confirm next day's meals the night before (lines, reservations, hours)",
+"Ordering rule: 3 mains for 4, Cuban portions are big",
+"11/24 Mykonos lunch + Hellas bakery",
+"Swap driving on 11/27 to Miami and 11/29 to Tampa"
+],
+"learn": "Reading foreign menus, judging restaurants from reviews, ordering for a group"
+},
+{
+"name": "Kevin",
+"title": "Navigation & parking / Miami leg lead",
+"owns": [
+"Co-pilot navigation: call turns one intersection early",
+"Parking: find it in advance, pay via ParkMobile, remember where",
+"Miami leg 11/27 evening – 11/29 morning (he booked the hotel)"
+],
+"do": [
+"Set navigation before each leg",
+"Handle meals Monday before Rosemary arrives",
+"Lead the two Miami days so Toby can rest",
+"Leave Miami before 08:00 on 11/29; US-41 in daylight only"
+],
+"learn": "Route planning, parking and detours in an unfamiliar city"
+},
+{
+"name": "Jasik",
+"title": "Finance & supplies / 11/29 day lead",
+"owns": [
+"Bookkeeping: every expense into the ledger",
+"Daily out-the-door checklist",
+"Leads Sunday 11/29"
+],
+"do": [
+"Whoever pays tells him on the spot; he logs it (payer, amount, split)",
+"Read the checklist before leaving: phone, power bank, wallet/ID, Disney app, water and snacks",
+"Post tomorrow's wake-up, departure and packing list each night",
+"11/29: wake-up call, departure reminders, pick lunch in Naples"
+],
+"learn": "Budgeting, planning and retros, and leading the team for a day"
+}
+],
+"rules": [
+"Whoever owns it decides: give input, the owner makes the call",
+"When in conflict, protect milestones (ticket slots, ferry, sunset, finishing the swamp road before dark)",
+"One task at a time: what and by when; have them repeat it back",
+"Nightly 5-minute stand-up: one thing that went well, one to watch tomorrow",
+"Don't drive tired; everyone keeps their own phone, wallet and ID",
+"Final-day retro: one thing learned and one thing to change"
+]
+}
+}
